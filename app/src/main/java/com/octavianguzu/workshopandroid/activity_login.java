@@ -17,6 +17,9 @@ public class activity_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        if(getSupportActionBar() != null)
+            getSupportActionBar().hide();
+
         Button button = (Button) findViewById(R.id.buton);
 
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);

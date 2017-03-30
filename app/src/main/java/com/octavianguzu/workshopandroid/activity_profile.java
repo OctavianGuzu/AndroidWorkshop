@@ -42,9 +42,25 @@ public class activity_profile extends AppCompatActivity {
         });
 
 
-        TextView create_date = (TextView) findViewById(R.id.created_data);
+        TextView updated_date = (TextView) findViewById(R.id.updated_data);
+        TextView created_date = (TextView) findViewById(R.id.created_data);
+        //create_date.setText("Thu, Oct 1, 2015");
 
-        create_date.setText("Thu, Oct 1, 2015");
+        SimpleDateFormat fmt = new SimpleDateFormat("EEE, MMM dd, yyyy");
+        Date date1 = new Date();
+        updated_date.setText(fmt.format(date1));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date c= sdf.parse("2015-10-01");
+            created_date.setText(fmt.format(c));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+
 
 
     }
