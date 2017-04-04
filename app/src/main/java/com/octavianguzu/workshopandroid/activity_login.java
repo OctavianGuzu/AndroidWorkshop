@@ -17,14 +17,15 @@ public class activity_login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        if(getSupportActionBar() != null)
+        if (getSupportActionBar() != null)
             getSupportActionBar().hide();
 
         Button button = (Button) findViewById(R.id.buton);
 
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        if(preferences.getBoolean("logged_in", false)) {
+        if (preferences.getBoolean("logged_in", false)) {
             Intent login_act = new Intent(activity_login.this, activity_profile.class);
+            finish();
             startActivity(login_act);
         }
 
@@ -39,13 +40,12 @@ public class activity_login extends AppCompatActivity {
 
                 EditText pass = (EditText) findViewById(R.id.password);
                 EditText user = (EditText) findViewById(R.id.username);
-                if(pass.getText().toString().equals("oct") &&
+                if (pass.getText().toString().equals("oct") &&
                         user.getText().toString().equals("Octav")) {
                     finish();
                     startActivity(login_act);
                     preferences.edit().putBoolean("logged_in", true).apply();
-                }
-                else {
+                } else {
                     fail_to_login.show();
                 }
             }

@@ -33,11 +33,13 @@ public class activity_profile extends AppCompatActivity {
         blog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                /*Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
                 intent.setData(Uri.parse("https://www.linkedin.com/in/octavian-guzu-698a41134/"));
-                startActivity(intent);
+                startActivity(intent);*/
+
+                startActivity(new Intent(activity_profile.this, RepositoriesActivity.class));
             }
         });
 
@@ -52,15 +54,11 @@ public class activity_profile extends AppCompatActivity {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            Date c= sdf.parse("2015-10-01");
+            Date c = sdf.parse("2015-10-01");
             created_date.setText(fmt.format(c));
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-
-
-
 
 
     }

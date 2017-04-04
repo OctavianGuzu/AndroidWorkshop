@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">"Octav's App"</string>
+    <string name="app_name">"GitHub Client"</string>
     <string name="log_out">Log out</string>
     <string name="bucharest">Bucharest</string>
     <string name="view_blog">View Blog</string>
     <string name="_17">17</string>
     <string name="_3">3</string>
+    <string name="repo_name_ow">%1$s (%2$s)</string>
+    <string name="public_checkbox">public</string>
 </resources>

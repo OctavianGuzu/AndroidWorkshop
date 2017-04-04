@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.octavianguzu.workshopandroid.activity_profile"
-    >
-
+    tools:context="com.octavianguzu.workshopandroid.activity_profile">
 
 
     <LinearLayout
@@ -19,14 +17,12 @@
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/octav"
-            />
+            android:src="@drawable/octav" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,19 +30,17 @@
                 android:layout_marginTop="16dp"
                 android:text="Octavian Guzu"
                 android:textColor="#000000"
-                android:textSize="30sp"
-                />
+                android:textSize="30sp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="Freelancer"
                 android:textColor="#000000"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
         </LinearLayout>
-
 
 
     </LinearLayout>
@@ -57,38 +51,34 @@
         android:layout_marginTop="16dp"
         android:text="Bio"
         android:textColor="#000000"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Second year Computer Science student looking for new opportunities."
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Location"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/bucharest"
-            android:textSize="18sp"
-
-            />
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -113,8 +103,7 @@
             android:autoLink="email"
             android:gravity="end"
             android:text="octavian.guzu@gmail.com"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -130,16 +119,15 @@
             android:layout_height="wrap_content"
             android:text="Created"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/created_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:textSize="18sp"
-            />
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
 
 
     </LinearLayout>
@@ -155,14 +143,14 @@
             android:layout_height="wrap_content"
             android:text="Updated"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/updated_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
+            android:textColor="@color/colorAccent"
             android:textSize="18sp"
 
             />
@@ -174,9 +162,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        >
-
+        android:layout_gravity="bottom">
 
 
     </LinearLayout>
@@ -185,25 +171,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Public Repos"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/_17"
-            android:textSize="18sp"
-
-            />
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -211,22 +194,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Private Repos"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/_3"
+            android:textColor="@color/colorAccent"
             android:textSize="18sp"
 
             />
@@ -234,13 +216,11 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
-        >
+        android:layout_weight="1">
 
         <Button
             android:id="@+id/blog_button"
@@ -252,7 +232,6 @@
             android:text="@string/view_blog"
 
             />
-
 
 
     </LinearLayout>
