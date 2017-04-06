@@ -77,6 +77,7 @@ public class activity_profile extends AppCompatActivity {
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
                 preferences.edit().putBoolean("logged_in", false).apply();
                 finish();
+                startActivity(new Intent(activity_profile.this, activity_login.class));
                 break;
         }
         return true;
