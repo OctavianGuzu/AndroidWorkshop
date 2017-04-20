@@ -2,7 +2,6 @@ package com.octavianguzu.workshopandroid;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Credentials;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class activity_login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,23 +30,26 @@ public class activity_login extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.buton);
 
         final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        if (preferences.getBoolean("logged_in", false)) {
-            Intent login_act = new Intent(activity_login.this, activity_profile.class);
-            finish();
+        if (preferences.getString("auth_hash", null) != null) {
+            Intent login_act = new Intent(LoginActivity.this, ProfileActivity.class);
             startActivity(login_act);
+            finish();
+            return;
         }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login_act = new Intent(activity_login.this, activity_profile.class);
+                Intent login_act = new Intent(LoginActivity.this, ProfileActivity.class);
                 login_act.putExtra("here", "we go");
 
 
                 EditText pass = (EditText) findViewById(R.id.password);
                 EditText user = (EditText) findViewById(R.id.username);
 
-                Call<LoginData> callable = GitHub.Service.Get().checkAuth(okhttp3.Credentials.basic(user.getText().toString(), pass.getText().toString()));
+                final String authHash = okhttp3.Credentials.basic(user.getText().toString(), pass.getText().toString());
+
+                Call<LoginData> callable = GitHub.Service.Get().checkAuth(authHash);
 
 
                 callable.enqueue(new Callback<LoginData>() {
@@ -55,11 +57,10 @@ public class activity_login extends AppCompatActivity {
                     public void onResponse(Call<LoginData> call, Response<LoginData> response) {
                         if (response.isSuccessful()) {
                             preferences.edit()
-                                    .putBoolean("logged_in", true).apply();
-                            finish();
-                            startActivity(new Intent(activity_login.this, activity_profile.class));
+                                    .putString("auth_hash", authHash).apply();
+                            goToProfileScreen();
                         } else {
-                            Toast fail_to_login = Toast.makeText(activity_login.this, "Wrong Username or Password", Toast.LENGTH_SHORT);
+                            Toast fail_to_login = Toast.makeText(LoginActivity.this, "Wrong Username or Password", Toast.LENGTH_SHORT);
                             fail_to_login.show();
                         }
                     }
@@ -67,11 +68,17 @@ public class activity_login extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<LoginData> call, Throwable t) {
                         t.printStackTrace();
-                        Toast.makeText(activity_login.this, "No internet connection", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "No internet connection", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
+    }
+
+    protected void goToProfileScreen() {
+        finish();
+        startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+
     }
 
 

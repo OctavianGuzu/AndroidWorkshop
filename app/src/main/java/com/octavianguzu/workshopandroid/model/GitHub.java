@@ -14,6 +14,9 @@ public interface GitHub {
     @GET("/")
     Call<LoginData> checkAuth(@Header("Authorization") String auth);
 
+    @GET("/user")
+    Call<GithubProfile> getUserProfile(@Header("Authorization") String auth);
+
     class Service {
         private static GitHub sInstance;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context="com.octavianguzu.workshopandroid.activity_profile">
+    tools:context="com.octavianguzu.workshopandroid.ProfileActivity">
 
 
     <LinearLayout
@@ -25,18 +25,18 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Octavian Guzu"
                 android:textColor="#000000"
                 android:textSize="30sp" />
 
             <TextView
+                android:id="@+id/occupation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Freelancer"
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
@@ -54,9 +54,9 @@
         android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second year Computer Science student looking for new opportunities."
         android:textSize="20sp" />
 
     <LinearLayout
@@ -73,10 +73,10 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="@string/bucharest"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
 
@@ -98,11 +98,11 @@
             />
 
         <TextView
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autoLink="email"
             android:gravity="end"
-            android:text="octavian.guzu@gmail.com"
             android:textSize="18sp" />
 
 
@@ -181,10 +181,10 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/public_repos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="@string/_17"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
 
@@ -204,10 +204,10 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/private_repos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="end"
-            android:text="@string/_3"
             android:textColor="@color/colorAccent"
             android:textSize="18sp"
 
